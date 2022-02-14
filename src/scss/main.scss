@@ -224,6 +224,10 @@ header {
     top: 0px;
     background-color: rgba(0, 0, 0, 0.44);
 
+    #big {
+      z-index: 300;
+    }
+
     #image {
       width: 200px;
       height: 200px;
@@ -287,87 +291,106 @@ header {
       #arrow-down {
         bottom: 20px;
       }
+
+      ul {
+        margin: 0 0 20px 0;
+        padding: 0;
+        li {
+          list-style: none;
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
     }
     #first {
       background-color: rgb(165, 42, 42);
     }
     #second {
-      background-color: rgb(100, 148, 237);
+      background-color: blue;
     }
     #third {
-      background-color: rgb(220, 20, 60);
+      background-color: #515f52;
+    }
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      height: 100%;
+      .text-box {
+        background: #fff;
+        width: 80vw;
+        height: 55vh;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+
+        #image {
+          height: 100%;
+          width: auto;
+          // background-image: url("../assets/serengeti_index.png");
+          // border-radius: 20px 0 0 20px;
+          // background-size: cover;
+          // background-position: left;
+          border-radius: 20px 0 0 20px;
+        }
+
+        #text {
+          width: calc(50% - 30px);
+          display: flex;
+          flex-direction: column;
+          height: 80%;
+          justify-content: space-evenly;
+
+          h1 {
+            font-family: $josefin;
+            font-weight: 600;
+            font-size: 2rem;
+            margin: 0;
+          }
+
+          p {
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        #click {
+          width: 90%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          button {
+            background-color: #a79d85;
+            width: 50%;
+            border: none;
+            border-radius: 5px;
+            height: 5vh;
+            font-family: $montserrat;
+            text-transform: uppercase;
+            color: #fff;
+          }
+
+          #git {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
-}
 
-body {
-  background: #42455a;
-}
-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section:nth-child(1) {
-  color: #e0ffff;
-}
-section:nth-child(2) {
-  color: #42455a;
-  background: #e0ffff;
-}
-section:nth-child(3) {
-  color: #e0ffff;
-}
-section:nth-child(4) {
-  color: #42455a;
-  background: #e0ffff;
-}
-section .container {
-  margin: 100px;
-}
-section h1 {
-  font-size: 3rem;
-  margin: 20px;
-}
-section h2 {
-  font-size: 40px;
-  text-align: center;
-  text-transform: uppercase;
-}
-section .text-container {
-  display: flex;
-}
-section .text-container .text-box {
-  margin: 20px;
-  padding: 20px;
-  background: #00c2cb;
-}
-section .text-container .text-box h3 {
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 900px) {
-  section h1 {
-    font-size: 2rem;
-    text-align: center;
+  .reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
   }
-  section .text-container {
-    flex-direction: column;
+
+  .reveal.active {
+    transform: translateY(0);
+    opacity: 1;
   }
-}
-
-.reveal {
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-.reveal.active {
-  transform: translateY(0);
-  opacity: 1;
 }
